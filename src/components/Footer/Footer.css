@@ -1,0 +1,6 @@
+.copy{
+    font-size: 9px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
