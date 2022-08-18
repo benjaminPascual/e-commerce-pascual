@@ -2,6 +2,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    border-bottom: solid black 1px;
 }
 
 .navLista{
@@ -11,10 +12,13 @@
     list-style: none;
     
 }
-.link{
+.li{
     margin: 0px 20px;
     text-decoration: none;
+    text-decoration-color: black;
 }
-.linkFirst{
+.link{
     margin-top: 15px;
+    text-decoration-color: black;
+    text-decoration: none;
 }
