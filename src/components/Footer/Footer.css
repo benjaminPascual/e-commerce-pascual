@@ -6,4 +6,5 @@
 }
 footer{
     background-color: rgb(37, 59, 78);
+    grid-area: footer;
 }

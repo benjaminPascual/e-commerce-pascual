@@ -1,16 +1,26 @@
-import React from 'react'
-import ItemCount from '../Counter/ItemCount'
+import React, { useEffect, useState } from 'react'
+import { products } from '../../Mock/products'
+import ItemList from '../ItemList/ItemList'
 
 
 const ItemListContainer = (props) => {
-  const onAdd = ()=>{
-    alert("agregado con exito!")
-  }
+
+  const [productsList, setProductList] = useState([])
+
+  const getProducts = ()=> new Promise((res, rej)=> {
+    setTimeout(()=> res(products), 2000);
+  })
+
+  useEffect(() => {
+    getProducts()
+    .then(products => setProductList(products))
+    .catch(error => console.error(error))
+  }, [])
 
   return (
     <div>
         <h1 className="titulo"> {props.saludo} </h1>
-        <ItemCount stock={10} initial={0} add={onAdd} />
+        <ItemList productsList={productsList} />
     </div>
   )
 }

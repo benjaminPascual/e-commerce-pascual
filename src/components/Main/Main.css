@@ -1,5 +1,6 @@
 .main{
     margin-bottom: 300px;
+    grid-area: main;
 }
 .titulo{
     margin: 40px;

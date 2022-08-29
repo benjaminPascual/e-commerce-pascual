@@ -1,6 +1,12 @@
 body{
-    background-color: rgb(37, 59, 78);
+    background-color: rgb(255, 255, 255);
 }
 .App{
-    background-color: rgb(82, 108, 124);
+    background-color: rgb(255, 255, 255);
+    display: grid;
+    grid-template-areas: 
+    "header"
+    "main"
+    "footer";
+    grid-template-rows: auto auto auto;
 }
