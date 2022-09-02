@@ -5,10 +5,6 @@ import './Item.css'
 const Item = (props) => {
 
     let stock = props.stock
-
-    const onAdd = ()=>{
-        alert("agregado con exito!");
-    }
     
   return (
     <div>
@@ -26,7 +22,6 @@ const Item = (props) => {
                 <div id="price">
                     <button> {props.price} </button>
                 </div>
-                <ItemCount stock={stock} initial={0} add={onAdd} />
             </div>
         </div>
     </div>

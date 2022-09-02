@@ -1,16 +1,14 @@
 import React, {useState} from 'react'
-import '../Item/Item.css'
+import './Counter.css'
 
-const ItemCount = (props) => {
+const ItemCount = ({stock, initial, onAdd}) => {
   const [count, setCount] = useState(0)
-
-  let stock = props.stock
 
   const sumar = () => {
     count<stock ? setCount(count +1) : alert("la cantidad supera al Stock");
   };
   const restar = () => {
-    count>props.initial && setCount(count -1);
+    count>initial && setCount(count -1);
   };
 
 
@@ -21,7 +19,9 @@ const ItemCount = (props) => {
         <h6>Cantidad: {count}</h6>
         <button className='btnCount' onClick={restar}>-</button>
       </div>
-      <button className='btnCountAdd' disabled={count === 0} onClick={props.add} >Agregar al carrito</button>
+      <div className='containterBtnAdd'>
+        <button className='btnCountAdd' disabled={count === 0} onClick={onAdd} >Agregar al carrito</button>
+      </div>
     </div>
   )
 }

@@ -70,20 +70,4 @@
     font-size: 12px;
    }
 
-   #count{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-   }
-
-  .btnCount{
-    height: 20px;
-    width: 30px;
-   }
-   .btnCountAdd{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    height: 30px;
-    width: 160px;
-   }
+   
