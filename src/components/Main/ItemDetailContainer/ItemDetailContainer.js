@@ -3,7 +3,7 @@ import { products } from '../../Mock/products';
 import ItemDetail from './ItemDetail/ItemDetail';
 import { useParams } from 'react-router-dom'
 
-const ItemDetailContainer = ({onAdd}) => {
+const ItemDetailContainer = ({}) => {
 
     const [product, setProduct] = useState({})
     const {idProd} = useParams(); 
@@ -21,7 +21,7 @@ const ItemDetailContainer = ({onAdd}) => {
 
   return (
     <div>
-        <ItemDetail product={product} onAdd={onAdd} />
+        <ItemDetail product={product} />
     </div>
   )
 }

@@ -5,9 +5,7 @@ import ItemListContainer from './ItemListContainer/ItemListContainer';
 import './Main.css'
 
 const Main = () => {
-    const onAdd = ()=>{
-        alert("agregado con exito!");
-    }
+    
     return (
         <main className="main">
             <Routes>
@@ -21,7 +19,7 @@ const Main = () => {
                 /> 
                 <Route 
                     path='/item/:idProd' 
-                    element={<ItemDetailContainer onAdd={onAdd} />}
+                    element={<ItemDetailContainer/>}
                 />
             </Routes>
         </main>
