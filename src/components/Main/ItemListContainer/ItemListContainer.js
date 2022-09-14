@@ -13,7 +13,7 @@ const ItemListContainer = (props) => {
   const prodFiltrados = products.filter((prod)=> prod.category === categoryId)
 
   const getProducts = ()=> new Promise((res, rej)=> {
-    setTimeout(()=> res(categoryId ? prodFiltrados : products), 2000);
+    setTimeout(()=> res(categoryId ? prodFiltrados : products), 200);
   })
 
   useEffect(() => {

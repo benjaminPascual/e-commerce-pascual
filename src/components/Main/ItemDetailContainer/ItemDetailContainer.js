@@ -11,7 +11,7 @@ const ItemDetailContainer = ({}) => {
     useEffect(() => {
         const getProduct = ()=> new Promise((res, rej)=> {
             const unicoProd = products.find((prod)=> prod.id === idProd)
-            setTimeout(()=> res(unicoProd), 2000);
+            setTimeout(()=> res(unicoProd), 200);
         })
 
         getProduct()

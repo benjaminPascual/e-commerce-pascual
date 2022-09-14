@@ -9,7 +9,6 @@ const NavBar = () => {
     <nav className="navBar">
       <Link to='/' >
         Altamira
-        
       </Link> 
       <ul className='navLista'>
         <li>
