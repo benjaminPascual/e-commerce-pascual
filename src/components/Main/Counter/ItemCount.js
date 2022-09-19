@@ -1,14 +1,17 @@
 import React, {useState} from 'react'
+import { useEffect } from 'react'
 import './Counter.css'
 
-const ItemCount = ({stock, initial, onAdd}) => {
+const ItemCount = ({stock, initial = 1, onAdd}) => {
   const [count, setCount] = useState(initial)
+
+  useEffect(()=>{ setCount(initial)}, [initial])
 
   const sumar = () => {
     count<stock ? setCount(count +1) : alert("la cantidad supera al Stock");
   };
   const restar = () => {
-    count>initial && setCount(count -1);
+    count>1 && setCount(count -1);
   };
 
 

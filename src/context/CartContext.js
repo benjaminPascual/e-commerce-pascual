@@ -30,6 +30,22 @@ const CartProvider = ({children}) => {
         setCart(updateProducts);
     };
 
+    const totalQuantity = () => {
+        let acum = 0
+        cart.forEach((prod) => {
+            acum = acum + prod.quantity 
+        })
+        return acum;
+    }
+
+    const totalPrice = () => {
+        let acum = 0
+        cart.forEach((prod) => {
+            acum = acum + prod.price * prod.quantity 
+        })
+        return acum;
+    }
+
     const removeItem = (id) => {
        const filteredProducts = cart.filter((prod) => prod.id !== id)
        setCart(filteredProducts);
@@ -39,12 +55,25 @@ const CartProvider = ({children}) => {
         setCart([]);
     }
 
+    const getProductQuantity = (id) => {
+        const item = cart.find((prod)=> prod.id === id)
+        return item?.quantity
+    }
+
     const isInCart = (id) => {
        return cart.some((prod) => prod.id === id)
     };
 
   return (
-    <CartContext.Provider value={{cart, addToCart, clearCart, removeItem}}>
+    <CartContext.Provider value={{
+        cart,
+        addToCart,
+        clearCart,
+        removeItem,
+        totalQuantity,
+        getProductQuantity,
+        totalPrice
+        }}>
         {children}
     </CartContext.Provider>
   )

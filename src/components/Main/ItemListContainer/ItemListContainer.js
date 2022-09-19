@@ -7,7 +7,7 @@ import {useParams} from 'react-router-dom'
 const ItemListContainer = (props) => {
 
   const [productsList, setProductList] = useState([])
-
+  const [loading, setLoading] = useState(true)
   const {categoryId} = useParams();
 
   const prodFiltrados = products.filter((prod)=> prod.category === categoryId)
@@ -18,14 +18,23 @@ const ItemListContainer = (props) => {
 
   useEffect(() => {
       getProducts()
-    .then(products => setProductList(products))
+    .then(products => {
+      setProductList(products)
+      setLoading(false)
+    })
     .catch(error => console.error(error))
   }, [categoryId])
 
   return (
     <div>
-        <h1 className="titulo"> {props.saludo} </h1>
-        <ItemList productsList={productsList} />
+        {loading ? 
+        <h2>Cargando..</h2>
+        :
+        <>
+          <h1 className="titulo"> {props.saludo} </h1>
+          <ItemList productsList={productsList} />
+        </>
+        }
     </div>
   )
 }

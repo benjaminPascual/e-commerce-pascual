@@ -7,7 +7,7 @@
    }
 
    #card{
-     background-color:rgb(255, 248, 234);
+     background-color: rgb(233, 245, 255);
      width:250px;
      height: auto;
      box-shadow: 4px 4px 8px 0 rgba(0,0,0,0.2);
@@ -48,7 +48,7 @@
      font-size:2.8vh;
      font-family:Arial;
      font-weight:Regular;
-     background-color:#f1bd4d;
+     background-color: rgb(120, 155, 184);
      border:none;
      outline:none;
      color:black;

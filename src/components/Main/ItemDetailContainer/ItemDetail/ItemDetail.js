@@ -6,17 +6,18 @@ import { CartContext } from '../../../../context/CartContext';
 
 const ItemDetail = ({product}) => {
   const [cantidad, setCantidad] = useState(0);
-  const { addToCart, cart } = useContext(CartContext);
+  const { addToCart, getProductQuantity } = useContext(CartContext);
 
   const onAdd = (count)=>{ 
     setCantidad(count)
     addToCart(product, count)
   };
+  const quantity = getProductQuantity(product.id)
 
   return (
     <div className="container">
       <div className="images">
-        <img src={product.img} />
+        <img src={product.img} className="imgDetail"/>
       </div>
       <div className="product">
         <p>Categoria: {product.category} </p>
@@ -25,7 +26,7 @@ const ItemDetail = ({product}) => {
         <p className="desc"> {product.description} </p>
         <div>
           { cantidad === 0 ? (
-            <ItemCount stock={product.stock} initial={1} onAdd={onAdd} />
+            <ItemCount stock={product.stock} initial={quantity} onAdd={onAdd} />
           ) : (
             <Link to='/cart' ><button>ir al carrito</button> </Link>
           )}

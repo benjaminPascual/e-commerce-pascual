@@ -1,3 +1,8 @@
+.cart{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
 .cartContainer{
     display: flex;
     flex-direction: column;
