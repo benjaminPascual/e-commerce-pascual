@@ -3,8 +3,11 @@ import ItemDetail from './ItemDetail/ItemDetail';
 import { useParams } from 'react-router-dom'
 import { db } from '../../../firebaseConfig';
 import { getDoc, doc, collection } from 'firebase/firestore';
+import { ScaleLoader } from 'react-spinners';
 
+// eslint-disable-next-line
 const ItemDetailContainer = ({}) => {
+    
     const [loading, setLoading] = useState(true)
     const [product, setProduct] = useState({})
     const {idProd} = useParams(); 
@@ -26,7 +29,7 @@ const ItemDetailContainer = ({}) => {
   return (
     <div>
       {loading ? 
-        <h2>Cargando..</h2>
+        <ScaleLoader color={"black"} size={100} />
         :
         <ItemDetail product={product} />
       }

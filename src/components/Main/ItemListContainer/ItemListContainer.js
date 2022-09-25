@@ -3,6 +3,7 @@ import ItemList from '../ItemList/ItemList'
 import {useParams} from 'react-router-dom'
 import { collection, getDocs, where, query } from 'firebase/firestore'
 import { db } from '../../../firebaseConfig'
+import { ScaleLoader } from 'react-spinners';
 
 const ItemListContainer = (props) => {
 
@@ -35,7 +36,7 @@ const ItemListContainer = (props) => {
   return (
     <div>
         {loading ? 
-        <h2>Cargando..</h2>
+        <ScaleLoader color={"black"} size={100} />
         :
         <>
           <h1 className="titulo"> {props.saludo} </h1>
