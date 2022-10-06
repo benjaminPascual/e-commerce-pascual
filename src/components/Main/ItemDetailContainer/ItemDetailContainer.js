@@ -21,7 +21,7 @@ const ItemDetailContainer = ({}) => {
             {id: res.id,
             ...res.data()
             });
-          setLoading(false);
+          setTimeout(()=>{setLoading(false);}, 1000)
         })
         .catch((err)=>{console.error(err);})
     }, [idProd])
@@ -29,7 +29,7 @@ const ItemDetailContainer = ({}) => {
   return (
     <div>
       {loading ? 
-        <ScaleLoader color={"black"} size={100} />
+        <div className='scaleLoader'><ScaleLoader color={"black"} size={100} /></div>
         :
         <ItemDetail product={product} />
       }

@@ -14,6 +14,7 @@
      border-radius:20px;
      transition:0.3s;
      margin: 10px;
+     
    }
    
    #card:hover {
@@ -31,7 +32,6 @@
    #content{
      padding:2vh 1vw 2vh 2vw; 
      font-size:1.3rem;
-     font-family:Arial;
      color:black;
    }
    
@@ -45,9 +45,7 @@
      margin:10px;
      height:40px;
      width:80px;
-     font-size:2.8vh;
-     font-family:Arial;
-     font-weight:Regular;
+     font-size:1rem;
      background-color: rgb(120, 155, 184);
      border:none;
      outline:none;
@@ -55,19 +53,9 @@
      border-radius:10px;
      transition:0.3s
    }
-   
-   button:active{
-     background-color:rgb(255, 248, 234);
-     color:black
-   }
-   
-   button:hover{
-     cursor:pointer
-   }
 
    h6{
     margin: 10px;
     font-size: 12px;
+    text-decoration: none;
    }
-
-   

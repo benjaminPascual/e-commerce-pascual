@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import { useEffect } from 'react'
 import './Counter.css'
+import swal from 'sweetalert'
 
 const ItemCount = ({stock, initial = 1, onAdd}) => {
   const [count, setCount] = useState(initial)
@@ -8,7 +9,12 @@ const ItemCount = ({stock, initial = 1, onAdd}) => {
   useEffect(()=>{ setCount(initial)}, [initial])
 
   const sumar = () => {
-    count<stock ? setCount(count +1) : alert("la cantidad supera al Stock");
+    count<stock ? setCount(count +1) : swal({
+      title: "uupps!",
+      text: "La cantidad deseada supera el stock maximo.",
+      icon: "warning",
+      button: "ok",
+    });
   };
   const restar = () => {
     count>1 && setCount(count -1);

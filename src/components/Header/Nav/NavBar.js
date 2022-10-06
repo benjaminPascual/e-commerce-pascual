@@ -1,30 +1,35 @@
 import React from 'react'
 import CartWidget from '../CartWidget/CartWidget'
 import './NavBar.css'
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 
 
 const NavBar = () => {
   return (
     <nav className="navBar">
-      <Link to='/'  className='itemNav'>
-        Altamira
+      <Link to='/'>
+        <img src='../altamira.png' className='imgNav'></img>
       </Link> 
       <ul className='navLista'>
-        <li className='itemNav'>
-          <Link to='/category/vino' >
-            Vino
-          </Link>
+        <li >
+          <NavLink className='itemNav' to='/' >
+            Home
+          </NavLink>
         </li>
-        <li className='itemNav'>
-          <Link to='/category/whisky' >
-            Whisky
-          </Link>
+        <li >
+          <NavLink className='itemNav' to='/category/vino' >
+            Vinos
+          </NavLink>
         </li>
-        <li className='itemNav'>
-          <Link to='/category/gin'>
-            Gin
-          </Link>
+        <li >
+          <NavLink className='itemNav' to='/category/whisky' >
+            Whiskys
+          </NavLink>
+        </li>
+        <li>
+          <NavLink className='itemNav' to='/category/gin'>
+            Ginebras
+          </NavLink>
         </li>
       </ul>
       <Link to='/cart'  className='itemNav'>

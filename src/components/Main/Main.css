@@ -6,3 +6,9 @@
     margin: 40px;
     text-decoration-color: black;
 }
+.scaleLoader{
+    margin: 10rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}

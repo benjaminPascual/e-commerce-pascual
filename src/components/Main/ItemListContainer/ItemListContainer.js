@@ -28,7 +28,7 @@ const ItemListContainer = (props) => {
         }
       });
       setProductList(products);
-      setLoading(false);
+      setTimeout(()=>{setLoading(false);}, 1000)
     })
     .catch((err)=>{console.error(err)})
   }, [categoryId]);
@@ -36,7 +36,7 @@ const ItemListContainer = (props) => {
   return (
     <div>
         {loading ? 
-        <ScaleLoader color={"black"} size={100} />
+        <div className='scaleLoader'><ScaleLoader color={"black"} size={100} /></div>
         :
         <>
           <h1 className="titulo"> {props.saludo} </h1>

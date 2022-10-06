@@ -10,7 +10,7 @@
     flex-direction: row;
     justify-content: space-between;
     list-style: none;
-    margin: 0;
+    margin: 2rem 0rem 0rem 0rem;
     padding: 0;
 }
 li{
@@ -27,4 +27,19 @@ li{
 }
 .itemNav{
     margin: 2rem 1rem;
+    text-decoration: none;
+}
+.active{
+    margin:20px;
+    padding: 0.3rem 0.6rem;
+     height:40px;
+     width:80px;
+     background-color: rgb(120, 155, 184);
+     border:none;
+     outline:none;
+     border-radius:10px;
+     transition:0.3s
+}
+.imgNav{
+    height: 6rem;
 }
